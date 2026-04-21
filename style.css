@@ -861,3 +861,130 @@ footer {
     padding-left: 45px;
   }
 }
+/* =========================================
+   ABOUT PAGE & PORTFOLIO SPECIFIC STYLES
+========================================= */
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.bg-alt { background-color: var(--bg-section); }
+.highlight-text { color: var(--primary); margin-bottom: 12px; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;}
+.icon-large { font-size: 48px; margin-bottom: 20px; }
+
+/* Active Nav State */
+.navbar a.active { color: var(--primary); font-weight: 700; }
+
+/* Custom Hero Spacing for About Page */
+.legacy-hero {
+  min-height: 50vh;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+.legacy-hero .hero-content {
+  max-width: 850px;
+}
+
+/* Two Column Grid layout for Core Ventures */
+.two-col-grid {
+  grid-template-columns: 1fr 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Before & After Transformation Showcase */
+.transformation-showcase {
+  padding: 80px 5%;
+  background: var(--bg-section);
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.before-after-grid {
+  display: flex;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.image-card {
+  flex: 1;
+  min-width: 320px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(15,23,42,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.before-card {
+  border: 1px solid var(--border-color);
+}
+
+.after-card {
+  border: 2px solid var(--primary);
+  box-shadow: 0 20px 40px var(--glow);
+}
+
+.image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(15,23,42,0.12);
+}
+
+.image-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.4s ease;
+}
+
+.before-card img {
+  filter: grayscale(30%) contrast(0.9);
+}
+.before-card:hover img {
+  filter: grayscale(0%) contrast(1);
+}
+
+/* Badges for Before/After */
+.badge {
+  position: absolute;
+  padding: 10px 24px;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+.badge-before {
+  top: 20px;
+  left: 20px;
+  background: rgba(15,23,42,0.85);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.badge-after {
+  top: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 15px var(--glow);
+}
+
+/* Mobile Adjustments for Grid */
+@media(max-width: 768px) {
+  .two-col-grid {
+    grid-template-columns: 1fr;
+  }
+  .image-card img {
+    height: 300px;
+  }
+  .legacy-hero h1 {
+    font-size: 40px;
+  }
+}
